@@ -501,4 +501,12 @@ body {
   .event__slideshow__details {
     left: 50px;
   }
+  
+  .header__section .hero__text {
+    font-size: 30px;
+  }
+
+  .header__section .navbar .join-now {
+    width: 200px;
+  }
 }
