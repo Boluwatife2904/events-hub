@@ -75,7 +75,7 @@ body {
   border: none !important;
 }
 
-.navbar-toggler>span i {
+.navbar-toggler > span i {
   font-size: 30px;
   color: #03caca;
 }
@@ -141,9 +141,10 @@ body {
   font-family: "Poppins", sans-serif;
   color: #000000;
   font-weight: bold;
-  line-height: 60px;
+  line-height: 78px;
   padding-top: 20px;
   margin-bottom: 20px;
+  font-size: 53px;
 }
 
 .header__section .hero__image {
@@ -364,11 +365,11 @@ body {
 }
 
 .our__partners .become__a__partner:hover {
-  background: linear-gradient(0deg, #00A9A9, #00A9A9), #00A9A9;
+  background: linear-gradient(0deg, #00a9a9, #00a9a9), #00a9a9;
 }
 
 .our__partners .become__a__partner:focus {
-  background: #007E7E;
+  background: #007e7e;
 }
 
 .slick-slide {
@@ -578,7 +579,8 @@ body {
 
 @media screen and (max-width: 990px) {
   .header__section .hero__text {
-    font-size: 30px;
+    font-size: 36px;
+    line-height: 60px;
   }
 
   .header__section .navbar .join-now {
@@ -599,5 +601,11 @@ body {
   .featured__event .featured__event__details {
     width: 100%;
     border-radius: 0px 0px 4px 4px;
+  }
+}
+
+@media screen and (max-width: 1198px) {
+  .header__section .hero__text {
+    font-size: 36px;
   }
 }
