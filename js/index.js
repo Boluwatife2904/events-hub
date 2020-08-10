@@ -1,59 +1,36 @@
-/* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-var arrow = document.querySelector(".arrow-icon");
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  if (arrow.classList.contains("fa-chevron-up")) {
-    arrow.classList = "fa fa-chevron-down pl-2";
-  } else {
-    arrow.classList = "fa fa-chevron-up pl-2";
-  }
-}
+$(document).ready(function () {
+  $(".our-partners").slick({
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  });
+});
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches(".dropbtn")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    arrow.classList = "fa fa-chevron-down pl-2";
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
+var buttons = document.querySelectorAll(".like__button i");
+Array.from(buttons).forEach(function (item) {
+  item.addEventListener("click", function () {
+    if (this.classList.contains("far")) {
+      this.classList = "fa fa-heart";
+    } else {
+      this.classList = "far fa-heart";
     }
-  }
-};
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
+  });
+});
